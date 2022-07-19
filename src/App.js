@@ -1,18 +1,36 @@
-import { createContext } from 'react'
-import ComA from './ComA'
-const FirstName = createContext()
-const LastName = createContext()
-function App() {
-  return (
-    <>
-    <FirstName.Provider value={"Jiddu"}>
-      <LastName.Provider value={"Krishnamurti"}>
-        <ComA/>
-      </LastName.Provider>
-    </FirstName.Provider>
-    </>
-  );
+import { useReducer } from 'react'
+
+const ACTIONS = {
+  INCREMENT: 'increment',
+  DECREMENT: 'decrement',
 }
 
-export default App;
-export { FirstName, LastName };
+function reducer(state, action) {
+  switch (action.type) {
+    case ACTIONS.INCREMENT:
+      return { count: state.count + 1 }
+    case ACTIONS.DECREMENT:
+      return { count: state.count - 1 }
+    default:
+      return state
+  }
+}
+function App() {
+  const [state, dispatch] = useReducer(reducer, { count: 0 })
+  const incrementCounter = () => {
+    dispatch({ type: ACTIONS.INCREMENT })
+  }
+
+  const decrementCounter = () => {
+    dispatch({ type: ACTIONS.DECREMENT })
+  }
+  return (
+    <>
+      <button onClick={incrementCounter}> Inc+ </button>
+      <span>{state.count}</span>
+      <button onClick={decrementCounter}> Dec- </button>
+    </>
+  )
+}
+
+export default App
