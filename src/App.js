@@ -5,14 +5,14 @@ const LastName = createContext()
 function App() {
   return (
     <>
-    <FirstName.Provider value={"Jiddu"}>
-      <LastName.Provider value={"Krishnamurti"}>
-        <ComA/>
-      </LastName.Provider>
-    </FirstName.Provider>
+      <FirstName.Provider value={'Rajneesh'}>
+        <LastName.Provider value={'Krishnamurti'}>
+          <ComA />
+        </LastName.Provider>
+      </FirstName.Provider>
     </>
-  );
+  )
 }
 
-export default App;
-export { FirstName, LastName };
+export default App
+export { FirstName, LastName }
