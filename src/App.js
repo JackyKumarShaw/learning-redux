@@ -1,5 +1,10 @@
 import React from 'react'
-
+import ComA from './ComA'
 export default function App() {
-  return <div>Hello</div>
+  return (
+    <>
+      <h1>Simple Counter</h1>
+      <ComA />
+    </>
+  )
 }
