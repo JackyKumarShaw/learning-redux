@@ -1,18 +1,5 @@
-import { createContext } from 'react'
-import ComA from './ComA'
-const FirstName = createContext()
-const LastName = createContext()
-function App() {
-  return (
-    <>
-    <FirstName.Provider value={"Jiddu"}>
-      <LastName.Provider value={"Krishnamurti"}>
-        <ComA/>
-      </LastName.Provider>
-    </FirstName.Provider>
-    </>
-  );
-}
+import React from 'react'
 
-export default App;
-export { FirstName, LastName };
+export default function App() {
+  return <div>Hello</div>
+}
